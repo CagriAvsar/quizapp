@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Bootstrap  JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <title>QuizApp</title>
+</head>
+
+<body onload="init()">
+
+    <div class="quiz-card-container" id="cardContainer">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-text">
+                <h1>QuizApp</h1>
+          </span>
+            </div>
+        </nav>
+
+        <div class="card" style="width: 18rem;">
+            <img src="imgs/logo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="card-title">Frage<b id="questionnumber"></b></h4>
+                <h5 class="card-text" id="questionbox"></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item answer-boxes" id="answer1" onclick="answers(answer_a)"><b>A</b></li>
+                <li class="list-group-item answer-boxes" id="answer2" onclick="answers(answer_b)"><b>B</b></li>
+                <li class="list-group-item answer-boxes" id="answer3" onclick="answers(answer_c)"><b>C</b></li>
+                <li class="list-group-item answer-boxes" id="answer4" onclick="answers(answer_d)"><b>D</b></li>
+            </ul>
+            <span class="quest-amount"><p><b>1</b></p> von <b  id="questpages">5</b> Fragen.</span>
+            <div class="btn-container">
+                <button class="last-btn">Letzte Frage</button>
+                <button class="next-btn">Nächste Frage</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
