@@ -1,12 +1,106 @@
 body {
     margin: 0;
-    background-image: url('imgs/bg-img.jpg');
+    background-image: url('imgs/background-img.jpg');
     background-position: bottom;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+}
+
+.overlay-cont {
+    height: 100vh;
+    background-color: aliceblue;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.d-none {
+    display: none;
+}
+
+h2 {
+    color: #00a793;
+}
+
+.endscreen-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.endscreen {
+    height: 700px;
+    width: 700px;
+    background-color: rgba(0, 0, 0, 0.712);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.endscreen img {
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+.endscreen-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+}
+
+.score {
+    color: magenta;
+    font-size: 24px;
+}
+
+.scores-cont {
+    font-size: 20px;
+    font-family: monospace;
+}
+
+#maxScore {
+    color: #4ebf18;
+    font-weight: bold;
+}
+
+.reset-btn {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: magenta;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #002525;
+}
+
+.reset-btn:hover {
+    background-color: #4ebf18;
+}
+
+.reset-btn:active {
+    background-color: #4ebf18;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.progress {
+    background-color: black !important;
+    border-radius: 0px 5px 5px 0px !important;
+}
+
+.progress-bar {
+    background-color: #00a793 !important;
 }
 
 .quiz-card-container {
@@ -18,8 +112,16 @@ body {
     border-radius: 4px;
 }
 
+.navbar-text {
+    color: #00a793 !important;
+}
+
 .navbar-light .navbar-text {
     color: deepskyblue !important;
+}
+
+.card-body {
+    margin-top: 33px;
 }
 
 .card-img-top {
@@ -28,6 +130,10 @@ body {
 
 .card-title {
     text-align: center;
+}
+
+.amount-questtion {
+    color: lightseagreen;
 }
 
 .card-text {
@@ -50,7 +156,15 @@ li:hover {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    padding: 8px 30px 8px 30px;
+    padding: 8px 70px 8px 70px;
+}
+
+.bg-success {
+    color: white !important;
+}
+
+.bg-danger {
+    color: white !important;
 }
 
 .btn-container {
@@ -61,16 +175,58 @@ li:hover {
 
 .last-btn {
     border-radius: 4px;
+    border: none;
     background-color: #fb4242;
     padding: 4px;
     width: 116px;
     color: whitesmoke;
+    cursor: pointer;
 }
 
 .next-btn {
     border-radius: 4px;
+    border: none;
     background-color: greenyellow;
     padding: 4px;
     width: 116px;
     color: navy;
+    cursor: pointer;
+}
+
+@media(max-width: 900px) {
+    .card-img-top {
+        display: none;
+    }
+    .card {
+        width: 100% !important;
+        height: 100%;
+    }
+    .quiz-card-container {
+        width: 100%;
+        height: 100vh;
+        font-size: 25px;
+    }
+    .next-btn,
+    .last-btn {
+        font-size: 22px;
+        border-radius: 13px;
+        box-shadow: 1px 1px 5px -1px;
+    }
+}
+
+.card-title {
+    font-size: 42px;
+}
+
+.card-text {
+    font-size: 35px;
+    margin-top: 46px;
+}
+
+.endscreen {
+    width: 100%;
+}
+
+.reset-btn {
+    margin-top: 42px;
 }

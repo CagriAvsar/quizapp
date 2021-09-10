@@ -5,48 +5,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-
     <!-- Bootstrap CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!-- Bootstrap  JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
 
     <title>QuizApp</title>
 </head>
 
 <body onload="init()">
 
-    <div class="quiz-card-container" id="cardContainer">
+    <div class="quiz-card-container d-none endscreen-cont" id="seccondCardContainer">
+        <div class="endscreen">
+            <div class="endscreen-child">
+                <img src="imgs/brain result.png">
+                <h3>GRATULATION!!! DU HAST DIE QUIZAPP ERFOLGREICH BEENDET!</h3>
+                <span class="score">YOUR SCORE</span>
+                <div class="scores-cont"><span><b id="minScore">10</b> / <b id="maxScore">10</b></span></div>
+                <button class="reset-btn" onclick="restartGame()">NEUSTART</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-card-container" id="mainCardContainer">
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
                 <span class="navbar-text">
-                <h1>QuizApp</h1>
+                <h2>QuizApp</h2>
           </span>
             </div>
         </nav>
 
         <div class="card" style="width: 18rem;">
-            <img src="imgs/logo.png" class="card-img-top" alt="...">
+            <img src="imgs/question-img.jpg" class="card-img-top" id="headerImg">
+            <img src="imgs/for.png" class="d-none" id="forImg">
             <div class="card-body">
-                <h4 class="card-title">Frage<b id="questionnumber"></b></h4>
+                <h4 class="card-title">Frage<b id="amountOfQuestion" class="amount-questtion">1</b><b id="questionnumber"></b></h4>
                 <h5 class="card-text" id="questionbox"></h5>
             </div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 0%;" id="progressNumber">25%</div>
+            </div>
+
             <ul class="list-group list-group-flush">
-                <li class="list-group-item answer-boxes" id="answer1" onclick="answers(answer_a)"><b>A</b></li>
-                <li class="list-group-item answer-boxes" id="answer2" onclick="answers(answer_b)"><b>B</b></li>
-                <li class="list-group-item answer-boxes" id="answer3" onclick="answers(answer_c)"><b>C</b></li>
-                <li class="list-group-item answer-boxes" id="answer4" onclick="answers(answer_d)"><b>D</b></li>
+                <li class="list-group-item answer-boxes" id="answer_1" onclick="answers('answer_1')"><b>A</b></li>
+                <li class="list-group-item answer-boxes" id="answer_2" onclick="answers('answer_2')"><b>B</b></li>
+                <li class="list-group-item answer-boxes" id="answer_3" onclick="answers('answer_3')"><b>C</b></li>
+                <li class="list-group-item answer-boxes" id="answer_4" onclick="answers('answer_4')"><b>D</b></li>
             </ul>
-            <span class="quest-amount"><p><b>1</b></p> von <b  id="questpages">5</b> Fragen.</span>
+            <span class="quest-amount"><p><b id="questpage">1</b></p> von <b  id="maxquestpages">5</b> Fragen.</span>
             <div class="btn-container">
                 <button class="last-btn">Letzte Frage</button>
-                <button class="next-btn">Nächste Frage</button>
+                <button class="next-btn" id="next-btn" onclick="nextQuestion()" disabled>Nächste Frage</button>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
